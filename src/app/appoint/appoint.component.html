@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-1"><br>
+      <h3>Schedule your appointment</h3><hr>
+      <h6>Click on any time to schedule your class - the first one is on us! After booking a time, and a member of our team will follow up with you over phone / email to confirm your trial session. Please email us at hello@learnwithjuni.com if you have any questions.</h6>
+        <mat-accordion><br><br>
+          
+          <!-- First expansion pannel -->
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <h5>Schedule Appointment</h5>
+                </mat-panel-title>
+                <mat-panel-description>
+                 Slect Timezone
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <mat-card>
+                <h5>Juni Learning - Trial Session</h5>
+                <p>50 minutes</p>
+              </mat-card>
+              <div class="col-md-12 d-flex justify-content-center"><br>
+               
+                <form> <br>
+                  <mat-form-field>
+                    <mat-select placeholder=" Select Timezone" [(ngModel)]="selectedValue" name="Timezone">
+                      <mat-option *ngFor="let Timezones of Timezone" [value]="Timezones.value">
+                        {{Timezones.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                
+                  <p> Selected value: {{selectedValue}} </p>
+                </form>
+              </div>
+            </mat-expansion-panel>
+
+          <!-- Second expansion panel -->          
+            <mat-expansion-panel (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Self aware panel
+                </mat-panel-title>
+                <mat-panel-description>
+                  Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <p>I'm visible because I am open</p>
+            </mat-expansion-panel>
+
+          <!-- Third expansion pannel -->
+            <mat-expansion-panel (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Self aware panel
+                </mat-panel-title>
+                <mat-panel-description>
+                  Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <p>I'm visible because I am open</p>
+            </mat-expansion-panel>
+
+          </mat-accordion>
+    </div>
+  </div>
+</div>

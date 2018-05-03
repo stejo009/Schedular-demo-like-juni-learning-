@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MeetupComponent } from './meetup/meetup.component';
 import { ExtensionPanelComponent } from './extension-panel/extension-panel.component';
 import { FormsModule } from '@angular/forms';
+import { AppointComponent } from './appoint/appoint.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     MeetupComponent,
     ExtensionPanelComponent,
+    AppointComponent,
     
     
   ],
