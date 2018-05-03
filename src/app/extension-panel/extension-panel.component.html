@@ -1,0 +1,95 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12"><br>
+        <h4>Schedule Appointment</h4>
+        <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Schedule Appointment
+                </mat-panel-title>
+                <mat-panel-description>
+                  Appointment time and date
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+          
+              <mat-form-field>
+                  <input matInput [matDatepicker]="picker" placeholder="Choose a date" (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+          
+                <mat-form-field>
+                    <mat-select [(value)]="selected" placeholder="Select Time" >
+                      <mat-option value="option1" *ngFor="let meetuptime of meetup">{{meetuptime}}</mat-option>
+                    </mat-select>
+                 </mat-form-field>
+
+                 
+                   <button mat-raised-button (click)="onsubmitdata()" >Submit</button>
+                 
+
+            </mat-expansion-panel>
+
+
+            <mat-expansion-panel (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Personal Information
+                </mat-panel-title>
+                <mat-panel-description>
+                  Enter your personal details
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+
+              <div class="col-md-12">
+                  <mat-form-field>
+                    <input matInput placeholder="First Name" [(ngModel)]="lname" required>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput placeholder="Last Name"   required>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput placeholder="Phone"  required>
+                  </mat-form-field>
+                </div>
+
+                <div class="col-md-12">
+                    <mat-form-field>
+                      <input matInput placeholder="Email"  required>
+                    </mat-form-field>
+                    <mat-form-field>
+                      <input matInput placeholder="Childs Name"  required>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-select [(value)]="selected" placeholder="Select Time" >
+                          <mat-option value="option1" *ngFor="let meetup of advertise">{{meetup}}</mat-option>
+                        </mat-select>
+                     </mat-form-field>
+                  </div><br>
+                  <button  class="btn btn-primary" (click)="onpersonalDara()" >Submit</button>
+                  <button mat-raised-button color="primary">Reset</button>
+                </mat-expansion-panel>
+                
+
+                  <mat-expansion-panel (opened)="panelOpenState = true"
+                    (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                          Confirmation
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p class="highlith">Hellow {{lastname}}</p>
+                      <p>Your Appointment is fixed</p>
+                      <p>{{dispdata}}</p>
+                      <p class="highlith">Confirmed</p>
+                    
+                  </mat-expansion-panel>
+          </mat-accordion>
+    </div>
+  </div>
+</div>
