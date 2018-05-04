@@ -11,6 +11,7 @@ import { MeetupComponent } from './meetup/meetup.component';
 import { ExtensionPanelComponent } from './extension-panel/extension-panel.component';
 import { FormsModule } from '@angular/forms';
 import { AppointComponent } from './appoint/appoint.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -28,7 +29,9 @@ import { AppointComponent } from './appoint/appoint.component';
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

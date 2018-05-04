@@ -24,14 +24,36 @@
                 <form> <br>
                   <mat-form-field>
                     <mat-select placeholder=" Select Timezone" [(ngModel)]="selectedValue" name="Timezone">
-                      <mat-option *ngFor="let Timezones of Timezone" [value]="Timezones.value">
+                      <mat-option *ngFor="let Timezones of NewTimezone, let i = index" [value]="Timezones.value" (click)="selectedTimezon(India)">
                         {{Timezones.viewValue}}
+                      
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
+                  <br>
                 
-                  <p> Selected value: {{selectedValue}} </p>
+                  <!-- <h5 *ngFor="let tmizone of sortedTimeZone">
+                      {{tmizone.value}}<br>{{tmizone.Sunday}}<br>{{tmizone.viewValue}}
+                  </h5> -->
+                  <h5>Your Timezone is : {{selectedValue}} </h5>
+
                 </form>
+              </div>
+
+              <div class="col-md-12"><br>
+                <div class="row"  *ngFor="let tmizone of sortedTimeZone">
+                  <div class="col-md-12">
+                     <p>Sunday: {{tmizone.Sunday.time}}</p><hr>
+                     <p>Monday: {{tmizone.Monday}}</p><hr>
+                     <p>Tuesday: {{tmizone.Tuesday}}</p><hr>
+                     <p>Wednesday: {{tmizone.Wednesday}}</p><hr>
+                     <p>Thusday: {{tmizone.Thusday}}</p><hr>
+                     <p>Friday: {{tmizone.Friday}}</p><hr>
+                     <p>Saturday: {{tmizone.Saturday}}</p><hr>
+
+                  </div>
+                  
+                </div>
               </div>
             </mat-expansion-panel>
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-appoint',
@@ -8,26 +9,37 @@ import { Component, OnInit } from '@angular/core';
 export class AppointComponent implements OnInit {
   panelOpenState: boolean = false;
   selectedValue: string;
+  sortedTimeZone = [];
+  NewTimezone=[];
 
-  Timezone = [
-    { value:	'Bosnia', viewValue:'Bosnia UTC +02:00' },	
-    { value:	'Botswana',	viewValue:'Botswana UTC +02:00'},	
-    { value:	'Brazil',		viewValue:'Brazil	UTC -03:00'},
-    { value:	'Brazil',		viewValue:'Brazil UTC-03:00'},
-    { value:	'British Indian Ocean Territory',	viewValue:'British UTC -06:00'},
-    { value:	'Cambodia',	viewValue:'Cambodia UTC -07:00'},
-    { value:	'Canada',	viewValue:'Canada UTC -05:00'},
-    { value:	'China',	viewValue:'China UTC -06:00'},
-    { value:	'Egypt',	viewValue:'Egypt UTC -02:00'},
-    { value:	'France',	viewValue:'France UTC -02:00'},
-    { value:	'Germany',	viewValue:'Germany UTC -02:00'},
-    { value:	'India',	viewValue:'India UTC -05:30'}
-     
-  ];
 
-  constructor() { }
+  constructor(private http: HttpClient){
+    this.http.get('http://localhost:3000/Timezone').subscribe((data) => {
+      let json:any = data;
+      this.NewTimezone = json;
+      // console.log("Dynamic Data:"+this.NewTimezone);
+      });
+    }
 
   ngOnInit() {
+   
+    
   }
+
+  public selectedTimezon() {
+    this.sortedTimeZone = [];
+   
+      for(let i = 0; i < Object.keys(this.NewTimezone).length; i++) {
+        let TimezoneData:any = this.NewTimezone[i];
+
+        if(TimezoneData.value == this.selectedValue) {
+          this.sortedTimeZone.push(TimezoneData);
+        }
+
+      }
+
+      }
+  
+
 
 }
