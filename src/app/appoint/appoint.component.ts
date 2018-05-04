@@ -9,9 +9,11 @@ import { HttpClient } from '@angular/common/http';
 export class AppointComponent implements OnInit {
   panelOpenState: boolean = false;
   selectedValue: string;
-  sortedTimeZone = [];
+  sortedTimeZone:any = [];
   NewTimezone=[];
-
+  Fdata=[];
+  sortdata = [];
+  Finaldata = [];
 
   constructor(private http: HttpClient){
     this.http.get('http://localhost:3000/Timezone').subscribe((data) => {
@@ -34,10 +36,21 @@ export class AppointComponent implements OnInit {
 
         if(TimezoneData.value == this.selectedValue) {
           this.sortedTimeZone.push(TimezoneData);
-        }
-
+        } 
       }
 
+      for(let i = 0; i<Object.keys(this.sortedTimeZone).length; i++){
+        let alldata = this.sortedTimeZone[i];
+        console.log("All data step by step " + alldata.Sunday);
+        this.Fdata.push(alldata.Sunday);
+      }
+
+      for(let i = 0; i<Object.keys(this.Fdata).length; i++){
+        this.Finaldata= this.Fdata[i];
+        console.log("Final data:"+this.Finaldata);
+      }
+      console.log(this.Fdata);
+  
       }
   
 

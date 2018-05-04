@@ -41,19 +41,19 @@
               </div>
 
               <div class="col-md-12"><br>
-                <div class="row"  *ngFor="let tmizone of sortedTimeZone">
-                  <div class="col-md-12">
-                     <p>Sunday: {{tmizone.Sunday.time}}</p><hr>
+                <div  *ngFor="let tmizone of Finaldata, let i = index">
+                     <p>{{tmizone}}</p><hr>
+               </div>     
+<!-- 
                      <p>Monday: {{tmizone.Monday}}</p><hr>
                      <p>Tuesday: {{tmizone.Tuesday}}</p><hr>
                      <p>Wednesday: {{tmizone.Wednesday}}</p><hr>
                      <p>Thusday: {{tmizone.Thusday}}</p><hr>
                      <p>Friday: {{tmizone.Friday}}</p><hr>
-                     <p>Saturday: {{tmizone.Saturday}}</p><hr>
+                     <p>Saturday: {{tmizone.Saturday}}</p><hr> -->
 
-                  </div>
                   
-                </div>
+                
               </div>
             </mat-expansion-panel>
 
