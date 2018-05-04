@@ -14,6 +14,19 @@ export class AppointComponent implements OnInit {
   Fdata=[];
   sortdata = [];
   Finaldata = [];
+  MondayData=[];
+  TuesdayData=[];
+  WednesdayData=[];
+  ThursdayData=[];
+  FridayData=[];
+  SaturdayData=[];
+  NewMondayData=[];
+  NewTuesdayData=[];
+  NewWednesdayData=[];
+  NewThursdayData=[];
+  NewFridayData=[];
+  NewSaturdayData=[];
+ 
 
   constructor(private http: HttpClient){
     this.http.get('http://localhost:3000/Timezone').subscribe((data) => {
@@ -41,13 +54,27 @@ export class AppointComponent implements OnInit {
 
       for(let i = 0; i<Object.keys(this.sortedTimeZone).length; i++){
         let alldata = this.sortedTimeZone[i];
-        console.log("All data step by step " + alldata.Sunday);
+        
         this.Fdata.push(alldata.Sunday);
+        this.MondayData.push(alldata.Monday);
+        console.log("All data step by step " + alldata.monday);
+        this.TuesdayData.push(alldata.Tuesday);
+        this.WednesdayData.push(alldata.Wednesday);
+        this.ThursdayData.push(alldata.Thursday);
+        this.FridayData.push(alldata.Friday);
+        this.SaturdayData.push(alldata.Saturday);
+        
       }
 
-      for(let i = 0; i<Object.keys(this.Fdata).length; i++){
+      for(let i = 0; i<Object.keys(this.Fdata || this.MondayData ||this.TuesdayData ||this.WednesdayData || this.ThursdayData|| this.FridayData || this.SaturdayData).length; i++){
         this.Finaldata= this.Fdata[i];
-        console.log("Final data:"+this.Finaldata);
+        this.NewMondayData=this.MondayData[i];
+        this.NewTuesdayData = this.TuesdayData[i];
+        this.NewWednesdayData=this.WednesdayData[i];
+        this.NewFridayData = this.FridayData[i];
+        this.NewThursdayData = this.ThursdayData[i];
+        console.log("Monday data:"+this.NewMondayData);
+        this.NewSaturdayData=this.SaturdayData[i];
       }
       console.log(this.Fdata);
   

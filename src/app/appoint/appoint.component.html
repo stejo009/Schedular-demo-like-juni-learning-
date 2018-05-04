@@ -41,9 +41,35 @@
               </div>
 
               <div class="col-md-12"><br>
-                <div  *ngFor="let tmizone of Finaldata, let i = index">
-                     <p>{{tmizone}}</p><hr>
-               </div>     
+                <div class="row">
+                    <div class="col-md-2" >
+                      <label>Sunday</label>
+                        <p *ngFor="let tmizone of Finaldata, let i = index">{{tmizone}}</p>                  
+                  </div>
+                  <div class="col-md-2">
+                    <label>Monday</label>
+                    <p *ngFor="let tmizone of NewMondayData, let i = index">{{tmizone}}</p>
+                  </div>
+                  
+                  <div class="col-md-2">
+                      <label>Tuesday</label>
+                      <p *ngFor="let tmizone of NewTuesdayData, let i = index">{{tmizone}}</p>
+                  </div>
+                  <div class="col-md-2">
+                      <label>Thursday</label>
+                      <p *ngFor="let tmizone of NewThursdayData, let i = index">{{tmizone}}</p>
+                  </div>
+                  <div class="col-md-2">
+                      <label>Friday</label>
+                      <p *ngFor="let tmizone of NewFridayData, let i = index">{{tmizone}}</p>
+                  </div>
+                  <div class="col-md-2">
+                      <label>Saturday</label>
+                      <p *ngFor="let tmizone of NewSaturdayData, let i = index">{{tmizone}}</p>
+                  </div>
+
+                </div>
+                     
 <!-- 
                      <p>Monday: {{tmizone.Monday}}</p><hr>
                      <p>Tuesday: {{tmizone.Tuesday}}</p><hr>
