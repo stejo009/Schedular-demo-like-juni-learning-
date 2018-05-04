@@ -49,24 +49,24 @@
                   </div>
                   <div class="col-md-2">
                     <label>Monday</label><hr>
-                    <p *ngFor="let tmizone of NewMondayData, let i = index">{{tmizone}}</p>
+                    <button type="button" *ngFor="let tmizone of NewMondayData, let i = index" class="btn btn-outline-primary" (click)="TimezonSelect()" >{{tmizone}}</button>                                      
                   </div>
                   
                   <div class="col-md-2">
                       <label>Tuesday</label><hr>
-                      <p *ngFor="let tmizone of NewTuesdayData, let i = index">{{tmizone}}</p>
+                    <button type="button" *ngFor="let tmizone of NewTuesdayData, let i = index" class="btn btn-outline-primary" (click)="TimezonSelect()" >{{tmizone}}</button>                                                            
                   </div>
                   <div class="col-md-2">
                       <label>Thursday</label><hr>
-                      <p *ngFor="let tmizone of NewThursdayData, let i = index">{{tmizone}}</p>
+                    <button type="button" *ngFor="let tmizone of NewThursdayData, let i = index" class="btn btn-outline-primary" (click)="TimezonSelect()" >{{tmizone}}</button>                                                                                  
                   </div>
                   <div class="col-md-2">
                       <label>Friday</label><hr>
-                      <p *ngFor="let tmizone of NewFridayData, let i = index">{{tmizone}}</p>
+                    <button type="button" *ngFor="let tmizone of NewFridayData, let i = index" class="btn btn-outline-primary" (click)="TimezonSelect()" >{{tmizone}}</button>                                                                                                        
                   </div>
                   <div class="col-md-2">
                       <label>Saturday</label><hr>
-                      <p *ngFor="let tmizone of NewSaturdayData, let i = index">{{tmizone}}</p>
+                    <button type="button" *ngFor="let tmizone of NewSaturdayData, let i = index" class="btn btn-outline-primary" (click)="TimezonSelect()" >{{tmizone}}</button>                                                                                                                              
                   </div>
 
                 </div>
@@ -75,8 +75,7 @@
             </mat-expansion-panel>
 
           <!-- Second expansion panel -->          
-            <mat-expansion-panel (opened)="panelOpenState = true"
-                                 (closed)="panelOpenState = false">
+            <mat-expansion-panel >
               <mat-expansion-panel-header>
                 <mat-panel-title>
                   Self aware panel
@@ -89,8 +88,7 @@
             </mat-expansion-panel>
 
           <!-- Third expansion pannel -->
-            <mat-expansion-panel (opened)="panelOpenState = true"
-                                 (closed)="panelOpenState = false">
+            <mat-expansion-panel>
               <mat-expansion-panel-header>
                 <mat-panel-title>
                   Self aware panel
