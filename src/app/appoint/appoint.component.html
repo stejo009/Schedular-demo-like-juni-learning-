@@ -35,7 +35,7 @@
                   <!-- <h5 *ngFor="let tmizone of sortedTimeZone">
                       {{tmizone.value}}<br>{{tmizone.Sunday}}<br>{{tmizone.viewValue}}
                   </h5> -->
-                  <h5>Your Timezone is : {{selectedValue}} </h5>
+                  <p>Your Timezone is : {{selectedValue}} </p>
 
                 </form>
               </div>
@@ -43,43 +43,34 @@
               <div class="col-md-12"><br>
                 <div class="row">
                     <div class="col-md-2" >
-                      <label>Sunday</label>
-                        <p *ngFor="let tmizone of Finaldata, let i = index">{{tmizone}}</p>                  
+                      <label>Sunday</label><hr>
+                        
+                        <button type="button"*ngFor="let tmizone of Finaldata, let i = index" class="btn btn-outline-primary" (click)="TimezonSelect()" >{{tmizone}}</button>                  
                   </div>
                   <div class="col-md-2">
-                    <label>Monday</label>
+                    <label>Monday</label><hr>
                     <p *ngFor="let tmizone of NewMondayData, let i = index">{{tmizone}}</p>
                   </div>
                   
                   <div class="col-md-2">
-                      <label>Tuesday</label>
+                      <label>Tuesday</label><hr>
                       <p *ngFor="let tmizone of NewTuesdayData, let i = index">{{tmizone}}</p>
                   </div>
                   <div class="col-md-2">
-                      <label>Thursday</label>
+                      <label>Thursday</label><hr>
                       <p *ngFor="let tmizone of NewThursdayData, let i = index">{{tmizone}}</p>
                   </div>
                   <div class="col-md-2">
-                      <label>Friday</label>
+                      <label>Friday</label><hr>
                       <p *ngFor="let tmizone of NewFridayData, let i = index">{{tmizone}}</p>
                   </div>
                   <div class="col-md-2">
-                      <label>Saturday</label>
+                      <label>Saturday</label><hr>
                       <p *ngFor="let tmizone of NewSaturdayData, let i = index">{{tmizone}}</p>
                   </div>
 
                 </div>
-                     
-<!-- 
-                     <p>Monday: {{tmizone.Monday}}</p><hr>
-                     <p>Tuesday: {{tmizone.Tuesday}}</p><hr>
-                     <p>Wednesday: {{tmizone.Wednesday}}</p><hr>
-                     <p>Thusday: {{tmizone.Thusday}}</p><hr>
-                     <p>Friday: {{tmizone.Friday}}</p><hr>
-                     <p>Saturday: {{tmizone.Saturday}}</p><hr> -->
-
-                  
-                
+               
               </div>
             </mat-expansion-panel>
 

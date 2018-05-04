@@ -79,7 +79,10 @@ export class AppointComponent implements OnInit {
       console.log(this.Fdata);
   
       }
-  
+      
+      TimezonSelect(){
+        alert("Testing");
+      }
 
 
 }
